@@ -4,16 +4,24 @@ export default class ApiService {
 
     static BASE_URL = "https://darkbluehotel-backend.onrender.com"
 
-    static getHeader() {
-       const token = localStorage.getItem('token');
+//     static getHeader() {
+//        const token = localStorage.getItem('token');
 
-return axios.get(ApiService.BASE_URL + "/rooms", {
-    headers: {
+// return axios.get(ApiService.BASE_URL + "/rooms", {
+//     headers: {
+//         Authorization: `Bearer ${token}`
+//     }
+// });
+// }
+
+
+// ✅ CORRECT CODE
+static getHeader() {
+    const token = localStorage.getItem('token');
+    return {
         Authorization: `Bearer ${token}`
-    }
-});
+    };
 }
-
     /**AUTH */
 
     /* This  register a new user */
