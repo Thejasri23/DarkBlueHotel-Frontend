@@ -40,7 +40,9 @@ function Navbar(){
             {!isAuthenticated &&<li><NavLink to="/login" active class="active"> Login</NavLink></li>}
             {!isAuthenticated &&<li><NavLink to="/register" active class="active">Register</NavLink></li>}
 
-            {!isAuthenticated && <li onclick= {handleLogout}> Logout</li>}
+            {isAuthenticated && (
+    <li onClick={handleLogout} style={{cursor: "pointer"}}>Logout</li>
+)}
         </ul>
        </nav>
     );

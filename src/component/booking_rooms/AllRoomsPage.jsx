@@ -83,7 +83,7 @@ const AllRoomsPage = () => {
           ))}
         </select>
       </div>
-      
+
       <RoomSearch handleSearchResult={handleSearchResult} />
       <RoomResult roomSearchResults={currentRooms} />
 

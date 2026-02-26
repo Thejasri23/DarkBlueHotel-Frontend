@@ -82,11 +82,19 @@ export default class ApiService {
         return result.data;
     }
 
-    /* This  gets all availavle rooms */
-    static async getAllAvailableRooms() {
-        const result = await axios.get(`${this.BASE_URL}/rooms/all-available-rooms`)
-        return result.data
-    }
+static async getAllAvailableRooms() {
+    const result = await axios.get(
+        `${this.BASE_URL}/rooms/all-available-rooms`,
+        { headers: this.getHeader() }
+    );
+    return result.data;
+}
+
+    // /* This  gets all availavle rooms */
+    // static async getAllAvailableRooms() {
+    //     const result = await axios.get(`${this.BASE_URL}/rooms/all-available-rooms`)
+    //     return result.data
+    // }
 
 
     /* This  gets all availavle by dates rooms from the database with a given date and a room type */
@@ -94,18 +102,23 @@ export default class ApiService {
         const result = await axios.get(
             `${this.BASE_URL}/rooms/available-rooms-by-date-and-type?checkInDate=${checkInDate}
 		&checkOutDate=${checkOutDate}&roomType=${roomType}`
-        )
+        );
         return result.data
     }
 
     /* This  gets all room types from thee database */
     static async getRoomTypes() {
-        const response = await axios.get(`${this.BASE_URL}/rooms/types`)
+        const response = await axios.get(
+            `${this.BASE_URL}/rooms/types`,
+        {header:this.getHeader()});
         return response.data
     }
     /* This  gets all rooms from the database */
     static async getAllRooms() {
-        const result = await axios.get(`${this.BASE_URL}/rooms/all`)
+        const result = await axios.get(
+            `${this.BASE_URL}/rooms/all`,
+            {header: this.getHeader()}
+        );
         return result.data
     }
     /* This funcction gets a room by the id */
