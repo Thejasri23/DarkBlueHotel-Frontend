@@ -2,7 +2,7 @@ import axios from "axios"
 
 export default class ApiService {
 
-    static BASE_URL = "http://localhost:4040"
+    static BASE_URL = "https://darkbluehotel-backend.onrender.com"
 
     static getHeader() {
         const token = localStorage.getItem("token");
